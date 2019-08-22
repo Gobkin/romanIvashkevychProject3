@@ -237,6 +237,7 @@ button {
   color: #584b42;
   background: #f77754;
   border-radius: 20px;
+  font-weight: 700;
 }
 
 img {
@@ -244,7 +245,7 @@ img {
 }
 
 .hidden {
-  display: none;
+  visibility: hidden;
 }
 
 .intro {
@@ -363,6 +364,16 @@ img {
 
 .gameArea .field {
   height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .gameArea h2 {
@@ -381,4 +392,14 @@ img {
   margin: 5px 0;
   padding: 10px;
   font-size: 2.6rem;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  border: 3px solid #584b42;
+  border-radius: 15px;
+}
+
+.gameArea ul li:hover {
+  border: 3px solid #537d91;
+  color: #537d91;
+  background: #a4d1c8;
 }
