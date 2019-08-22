@@ -181,7 +181,14 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 @font-face {
   font-family: 'florenceregular';
-  src: url("../fonts/florence-regular-webfont.woff2") format("woff2"), url("../fonts/florence-regular-webfont.woff") format("woff");
+  src: url("../fonts/florence/florence-regular-webfont.woff2") format("woff2"), url("../fonts/florence/florence-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ribbonregular';
+  src: url("../fonts/ribbon/ribbon_v2_2011-webfont.woff2") format("woff2"), url("../fonts/ribbon/ribbon_v2_2011-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -191,89 +198,113 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 html {
+  font-size: 62.5%;
   background: url(../images/background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   font-family: florenceregular;
+  color: #584b42;
+}
+
+h1 {
+  font-family: ribbonregular;
+  font-size: 5.6rem;
+  margin: 0;
+}
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+ul li {
+  display: inline;
 }
 
 .intro {
   height: 100vh;
+  /* the cross - the main part of the logo */
+  /* general styles for the characters in our logo */
+  /* helper classes for quadrant orientation */
+  /* quadrants*/
 }
 
-ul {
-  list-style: none;
+.intro .jumbotron {
+  background: rgba(164, 209, 200, 0.9);
+  height: 100vh;
+  text-align: center;
 }
 
-.logo-container, .circle, .cross:before, .cross:after {
+.intro .logo-container, .intro .circle, .intro .cross:before, .intro .cross:after {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
 }
 
-/* the cross - the main part of the logo */
-.cross::before, .cross::after {
-  background: orange;
+.intro .cross::before, .intro .cross::after {
+  background: #f77754;
   width: 198px;
   height: 5px;
   -webkit-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
 }
 
-.cross::before {
+.intro .cross::before {
   -webkit-transform: translateX(-50%) rotate(45deg);
   transform: translateX(-50%) rotate(45deg);
 }
 
-.cross::after {
+.intro .cross::after {
   -webkit-transform: translateX(-50%) rotate(-45deg);
   transform: translateX(-50%) rotate(-45deg);
 }
 
-/* general styles for the characters in our logo */
-.characters {
+.intro .characters {
   position: absolute;
   font: normal normal 400 18pt/1 "Times New Roman", Times, serif;
-  color: orange;
+  color: #f77754;
   text-align: center;
 }
 
-.icon {
+.intro .icon {
   color: #e74c3c;
   text-shadow: 0 1px 0 #333;
 }
 
-/* helper classes for quadrant orientation */
-.landscape {
+.intro .landscape {
   width: 140px;
   height: 70px;
   line-height: 70px;
 }
 
-.portrait {
+.intro .portrait {
   width: 70px;
   height: 140px;
   line-height: 140px;
 }
 
-/* quadrants*/
-.t-q {
+.intro .t-q {
   top: -70px;
   left: -70px;
 }
 
-.b-q {
+.intro .b-q {
   top: 0px;
   left: -70px;
 }
 
-.l-q {
+.intro .l-q {
   top: -70px;
   left: -70px;
 }
 
-.r-q {
+.intro .r-q {
   top: -70px;
   left: 0px;
 }

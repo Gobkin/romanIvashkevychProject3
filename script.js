@@ -91,7 +91,7 @@ $(function(){
         let userAnswer = $(this).text();
         let pickedOption = currentRoom.options.find( answer => answer.optionText === userAnswer);
         $('h2').text(pickedOption.outcomeText);
-        $('button').toggleClass('hidden');
+        $('.next').toggleClass('hidden');
         $('li').off('click');
         // Increment/decrement score;
         character.score = character.score + pickedOption.scoreChange;
@@ -101,17 +101,17 @@ $(function(){
 
     // zis one hereis a function that puts all the new information about a room on the page
     const populate = () =>{
-        $('img').attr('src', currentRoom.image);
+        $('.roomImage').attr('src', currentRoom.image);
         $('h2').text(currentRoom.text);
         $('.score').text(character.score);
         for (let i = 0; i < 3; i++){
             $(`.option${i}`).text(currentRoom.options[i].optionText);
         }
         $('li').on('click', checkAnswer);
-        $('button').toggleClass('hidden');
+        $('.next').toggleClass('hidden');
     }
 
-    $('button').toggleClass('hidden');
+    $('.next').toggleClass('hidden');
     populate();
 
     
