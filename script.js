@@ -3,81 +3,86 @@ $(function(){
     let character = {
         currentLocation: 0,
         score: 2,
-    }
-    const room0 = {
-        image:"https://placebeard.it/640x360",
-        text:"Such text from room0 wow.",
-        options: [
-            {
-                optionText:"option1 veri much",
-                outcomeText:"poor life choices led to this",
-                roomOutcome: 1,
-                scoreChange: 1
-            },
-            {
-                optionText:"option2 veri much",
-                outcomeText:"medium life choices led to this",
-                roomOutcome: 2,
-                scoreChange: 1
-            },
-            {
-                optionText:"option3 veri much",
-                outcomeText:"succes life choices led to this",
-                roomOutcome: 1,
-                scoreChange: 1
-            }
-        ]
-    }
-    const room1 = {
-        image:"https://placebeard.it/640x360",
-        text:"Such text from room1 wow.",
-        options: [
-            {
-                optionText:"option1 veri much",
-                outcomeText:"poor life choices led to this",
-                roomOutcome: 3,
-                scoreChange: 1
-            },
-            {
-                optionText:"option2 veri much",
-                outcomeText:"medium life choices led to this",
-                roomOutcome: 3,
-                scoreChange: 1
-            },
-            {
-                optionText:"option3 veri much",
-                outcomeText:"success life choices led to this",
-                roomOutcome: 3,
-                scoreChange: 1
-            }
-        ]
-    }
-    const room2 = {
-        image:"https://placebeard.it/640x360",
-        text:"Such text from room2 wow.",
-        options: [
-            {
-                optionText:"option1 veri much",
-                outcomeText:"poor life choices led to this",
-                roomOutcome: 3,
-                scoreChange: 1
-            },
-            {
-                optionText:"option2 veri much",
-                outcomeText:"medium life choices led to this",
-                roomOutcome: 3,
-                scoreChange: 1
-            },
-            {
-                optionText:"option3 veri much",
-                outcomeText:"success life choices led to this",
-                roomOutcome: 3,
-                scoreChange: 1
-            }
-        ]
+        transport:'',
+        drunk: false,
     }
 
-    const roomsArray = [room0, room1, room2];
+    const roomsArray = [
+        {
+            image:"https://placebeard.it/640x360",
+            text:"Such text from room0 wow.",
+            options: [
+                {
+                    optionText:"option1 veri much",
+                    outcomeText:"poor life choices led to this",
+                    roomOutcome: 1,
+                    scoreChange: 1
+                },
+                {
+                    optionText:"option2 veri much",
+                    outcomeText:"medium life choices led to this",
+                    roomOutcome: 2,
+                    scoreChange: -1
+                },
+                {
+                    optionText:"option3 veri much",
+                    outcomeText:"succes life choices led to this",
+                    roomOutcome: 1,
+                    scoreChange: 2
+                }
+            ]
+        },
+        {
+            image:"https://placebeard.it/540x360",
+            text:"Such text from room1 wow.",
+            options: [
+                {
+                    optionText:"option1 veri much",
+                    outcomeText:"poor life choices led to this",
+                    roomOutcome: 3,
+                    scoreChange: 1
+                },
+                {
+                    optionText:"option2 veri much",
+                    outcomeText:"medium life choices led to this",
+                    roomOutcome: 3,
+                    scoreChange: 1
+                },
+                {
+                    optionText:"option3 veri much",
+                    outcomeText:"success life choices led to this",
+                    roomOutcome: 3,
+                    scoreChange: 1
+                }
+            ]
+        },
+        {
+            image:"https://placebeard.it/340x360",
+            text:"Such text from room2 wow.",
+            options: [
+                {
+                    optionText:"option1 veri much",
+                    outcomeText:"poor life choices led to this",
+                    roomOutcome: 3,
+                    scoreChange: 1
+                },
+                {
+                    optionText:"option2 veri much",
+                    outcomeText:"medium life choices led to this",
+                    roomOutcome: 3,
+                    scoreChange: 1
+                },
+                {
+                    optionText:"option3 veri much",
+                    outcomeText:"success life choices led to this",
+                    roomOutcome: 3,
+                    scoreChange: 1
+                }
+            ]
+        }
+    ]
+
+    // const roomsArray = [room0, room1, room2];
     let currentRoom = roomsArray[character.currentLocation];
     
     // Display initial text, options and picture;
@@ -85,22 +90,19 @@ $(function(){
     const checkAnswer = function(){
         let userAnswer = $(this).text();
         let pickedOption = currentRoom.options.find( answer => answer.optionText === userAnswer);
-        $('h1').text(pickedOption.outcomeText);
+        $('h2').text(pickedOption.outcomeText);
         $('button').toggleClass('hidden');
         $('li').off('click');
         // Increment/decrement score;
         character.score = character.score + pickedOption.scoreChange;
         character.currentLocation = pickedOption.roomOutcome;
-        console.log(character.currentLocation);
-        console.log(character);
-        console.log(currentRoom);
         currentRoom = roomsArray[character.currentLocation];
     }
 
+    // zis one hereis a function that puts all the new information about a room on the page
     const populate = () =>{
-
         $('img').attr('src', currentRoom.image);
-        $('h1').text(currentRoom.text);
+        $('h2').text(currentRoom.text);
         $('.score').text(character.score);
         for (let i = 0; i < 3; i++){
             $(`.option${i}`).text(currentRoom.options[i].optionText);

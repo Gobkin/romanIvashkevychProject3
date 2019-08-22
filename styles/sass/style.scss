@@ -1,0 +1,93 @@
+@import "setup";
+
+@font-face {
+    font-family: 'florenceregular';
+    src: url('../fonts/florence-regular-webfont.woff2') format('woff2'),
+        url('../fonts/florence-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.hidden{
+    display:none;
+}
+
+html{
+    background: url(../images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: florenceregular;
+}
+
+
+.intro{
+    height: 100vh;
+}
+
+ul{
+    list-style:none;
+}
+
+.logo-container,  .circle, .cross:before,  .cross:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+/* the cross - the main part of the logo */
+.cross::before,  .cross::after {
+    background: orange;
+    width: 198px;
+    height: 5px;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+.cross::before {
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+}
+.cross::after {
+    -webkit-transform: translateX(-50%) rotate(-45deg);
+    transform: translateX(-50%) rotate(-45deg);
+}
+/* general styles for the characters in our logo */
+.characters {
+    position: absolute;
+    font: normal normal 400 18pt/1 "Times New Roman", Times, serif;
+    color:orange;
+    text-align: center;
+}
+.icon {
+    color: #e74c3c;
+    text-shadow: 0 1px 0 #333;
+}
+/* helper classes for quadrant orientation */
+.landscape {
+    width: 140px;
+    height: 70px;
+    line-height: 70px;
+}
+.portrait {
+    width: 70px;
+    height: 140px;
+    line-height: 140px;
+}
+
+/* quadrants*/
+.t-q {
+    top: -70px;
+    left: -70px;
+}
+.b-q {
+    top: 0px;
+    left: -70px;
+}
+.l-q {
+    top: -70px;
+    left: -70px;
+}
+.r-q {
+    top: -70px;
+    left: 0px;
+}
