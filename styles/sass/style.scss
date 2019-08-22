@@ -22,9 +22,6 @@ $accent2: #a4d1c8;
 
 }
 
-.hidden{
-    display:none;
-}
 
 html{
     font-size: 62.5%;
@@ -33,12 +30,17 @@ html{
     background-repeat: no-repeat;
     font-family: florenceregular;
     color:$secondary;
+    scroll-behavior: smooth;
 }
 
-h1{
-    font-family: ribbonregular;
-    font-size: 5.6rem;
-    margin:0;
+.headerContainer{
+    transform: skewy(-4deg);
+    padding:50px 0;
+    h1{
+        font-family: ribbonregular;
+        font-size: 5.6rem;
+        margin:0;
+    }
 }
 
 ul{
@@ -49,24 +51,41 @@ ul{
     }
 }
 
+button{
+    width: 200px;
+    height: 50px;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color:$secondary;
+    background:$primary;
+    border-radius: 20px;
+}
+
+img{
+    max-height: 100%;
+}
+
+.hidden{
+    display:none;
+}
 // INTRO SECTION STYLES
 .intro{
     height: 100vh;
-
+    
     .jumbotron{
         background: rgba(164,209,200,0.9);
         height:100vh;
         text-align: center;
     }
-
+    
     // LOGO STYLES
-    .logo-container,  .circle, .cross:before,  .cross:after {
+    .logoContainer,  .circle, .cross:before,  .cross:after {
         content: "";
         position: absolute;
         top: 50%;
         left: 50%;
     }
-
+    
     /* the cross - the main part of the logo */
     .cross::before,  .cross::after {
         background: $primary;
@@ -122,5 +141,56 @@ ul{
     .r-q {
         top: -70px;
         left: 0px;
+    }
+
+    .play{
+        margin-top:300px;
+    }
+}
+
+// GAMEAREA STYLES
+
+.gameArea{
+    background:rgba(164,209,200,0.6);
+    height:100vh;
+
+    .container{
+        display:flex;
+        justify-content: center;
+        margin:0 auto;
+    }
+
+    .scoreBoard{
+        float:right;
+    }
+
+    .picture{
+        width:25vw;
+        height: 50%;
+        margin-top:10vh;
+        // box-shadow: inset 0px 0px 40px 40px rgba(164,209,200,0.6);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .field{
+        height: 50vh;
+    }
+
+    h2{
+        font-size: 4rem;
+        margin:0;
+    }
+
+    ul{
+        width:100%;
+        padding:0;
+        li{
+            width:100%;
+            background: $primary;
+            margin: 5px 0;
+            padding:10px;
+            font-size: 2.6rem;
+        }
     }
 }

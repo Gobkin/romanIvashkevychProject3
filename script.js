@@ -101,7 +101,7 @@ $(function(){
 
     // zis one hereis a function that puts all the new information about a room on the page
     const populate = () =>{
-        $('.roomImage').attr('src', currentRoom.image);
+        $('.picture').css('background-image', `url(${currentRoom.image})`);
         $('h2').text(currentRoom.text);
         $('.score').text(character.score);
         for (let i = 0; i < 3; i++){
@@ -119,11 +119,9 @@ $(function(){
     // Match the selected input with the corresponding result;
     // Display the result of user’s choice;
     
-
-    
-    $('button').on('click', populate);
+    $('.next').on('click', populate);
 });
-// Check if the score is too low;
+
 // Display text, options and picture of the next part based on the previous choice;
 // Repeat till the end;
 // Once the final part is reached display the final result text based on the overall score achieved.

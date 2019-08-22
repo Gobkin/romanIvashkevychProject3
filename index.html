@@ -12,7 +12,7 @@
     <section class="intro">
         <div class="jumbotron">
             <div class="cross">
-                <div class="logo-container">
+                <div class="logoContainer">
                     <ul>
                         <li class='characters portrait l-q' class='l-q'>L</li>
                         <li class='characters portrait r-q' class='r-q'>H</li>
@@ -21,26 +21,38 @@
                     </ul>
                 </div>
             </div>
-            <h1>Life of Hipster</h1>
-            <button class="play">play</button>
+            <div class="headerContainer">
+                <h1>Life of Hipster</h1>
+            </div>
+            <a href="#play">
+                <button>play</button>
+            </a>
         </div>
     </section>
-    <div class="scoreBoard">Hipsterity: <span class="score"></span></div>
-    <div>
-        <img class="roomImage" src="" alt="">
-        <div>
-            <h2></h2>
-            <button class="hidden next">Whats next</button>
-            <hr>
+    <section class="gameArea">
+        <div class="scoreBoard">
+            Hipsterity: <span class="score"></span>
+        </div>
+
+        <div class="container">
             <div>
-                <ul>
-                    <li class="option0"></li>
-                    <li class="option1"></li>
-                    <li class="option2"></li>
-                </ul>
+                <div class="picture">
+                    <!-- <img class="roomImage" src="" alt=""> -->
+                </div>
+                <div class="field">
+                    <h2></h2>
+                    <button class="hidden next">Whats next</button>
+                    <div>
+                        <ul id="play">
+                            <li class="option0"></li>
+                            <li class="option1"></li>
+                            <li class="option2"></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
     
     <script
     src="https://code.jquery.com/jquery-2.2.4.js"
