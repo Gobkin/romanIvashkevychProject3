@@ -244,7 +244,7 @@ button {
 
 button:hover {
   border: 3px solid #537d91;
-  color: #537d91;
+  color: #f77754;
   background: #a4d1c8;
 }
 
@@ -298,13 +298,8 @@ img {
 .intro .characters {
   position: absolute;
   font: normal normal 400 18pt/1 "Times New Roman", Times, serif;
-  color: #f77754;
+  color: #584b42;
   text-align: center;
-}
-
-.intro .icon {
-  color: #e74c3c;
-  text-shadow: 0 1px 0 #333;
 }
 
 .intro .landscape {

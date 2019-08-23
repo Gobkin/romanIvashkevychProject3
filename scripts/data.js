@@ -1,13 +1,4 @@
-const app = {};
-// Le variables
-app.character = {
-    currentLocation: 0,
-    score: 2,
-    transport:'',
-    drunk: false,
-}
-
-app.roomsArray = [
+roomsArray = [
     {   
         roomIndex:0,
         image:"images/bedroom.jpg",
@@ -86,7 +77,7 @@ app.roomsArray = [
     {   
         roomIndex:3,
         image:"images/bar.jpg",
-        text:"Your local drinking establishment greets you with darkness, dankness and aong that just repeats \"Hey!\" over and over again to the sounds of ukulele. What should you order?",
+        text:"Your local drinking establishment greets you with darkness, dankness and a song that just repeats \"Hey!\" over and over again to the sounds of ukulele. What should you order?",
         options: [
             {
                 optionText:"Load up on IPAs",
@@ -184,7 +175,32 @@ app.roomsArray = [
         ]
     },
     {   
-        roomIndex:5,
+        roomIndex:7,
+        image:"images/blog.jpg",
+        text:"You settle in a chair for a blogging section. Hm-m-m... What should you blog about?",
+        options: [
+            {
+                optionText:"Copy paragraphs from other blogs.",
+                outcomeText:"Your creativity knows no limmits as you copy and paste paragraphs from the most prominent bloggrs of your street. You are on fire! ... Actually... Those other bloggers set your apartment on fire and already blogged about it. You suffocate in the fumes.",
+                roomOutcome: 9,
+                scoreChange: 0
+            },
+            {
+                optionText:"Post some Hipster Ipsum.",
+                outcomeText:"The lack of ideas call for desperate measures. You generate couple paragraphs of Hipster Ipsum in a futile attempt to attract readers. In an unexpected turn of events one of the paragraphs is actually a text of an ancient dark spell. The rift in time opens and deamon emerges. Your mind can not comprehend what is going on and you lose contiosness.",
+                roomOutcome: 9,
+                scoreChange: 0
+            },
+            {
+                optionText:"Look for inspiration elsewhere.",
+                outcomeText:"You have no ideas. Maybe some fresh IPAs will help? (Hipsterity: +1)",
+                roomOutcome: 3,
+                scoreChange: 1
+            }
+        ]
+    },
+    {   
+        roomIndex:8,
         image:"images/walk.jpg",
         text:"Walking around town with no destination is a pretty nice mediocre task. Until you see a group of rivals aproaching you. Their manbuns are impecable, jeans so skinny there is absolutely no chhance of them having descendant and they spend more on beard care products then you do on rent. What will you do?",
         options: [
@@ -210,43 +226,3 @@ app.roomsArray = [
     },
     
 ];
-
-app.currentRoom = app.roomsArray[app.character.currentLocation];
-
-app.checkAnswer = function(){
-    let userAnswer = $(this).text();
-    let pickedOption = app.currentRoom.options.find( answer => answer.optionText === userAnswer);
-    $('h2').text(pickedOption.outcomeText);
-    $('.next').toggleClass('hidden');
-    $('li').off('click');
-    // Increment/decrement score;
-    app.character.score = app.character.score + pickedOption.scoreChange;
-    app.character.currentLocation = pickedOption.roomOutcome;
-    app.currentRoom = app.roomsArray[app.character.currentLocation];
-}
-
-app.populate = () =>{
-    $('.picture').css('background-image', `url(${app.currentRoom.image})`);
-    $('h2').text(app.currentRoom.text);
-    $('.score').text(app.character.score);
-    for (let i = 0; i < 3; i++){
-        $(`.option${i}`).text(app.currentRoom.options[i].optionText);
-    }
-    $('li').on('click', app.checkAnswer);
-    $('.next').toggleClass('hidden');
-}
-
-
-$(function(){
-    $('.next').toggleClass('hidden');
-    app.populate();
-    $('.next').on('click', app.populate);
-});
-
-// Listen to which option the user picks from the list;
-// Match the selected input with the corresponding result;
-// Display the result of user’s choice;
-// Display text, options and picture of the next part based on the previous choice;
-// Repeat till the end;
-// Once the final part is reached display the final result text based on the overall score achieved.
-

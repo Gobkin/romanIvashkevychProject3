@@ -66,7 +66,7 @@ button{
 
 button:hover{
     border: 3px solid $accent1;
-    color:$accent1;
+    color:$primary;
     background: $accent2;
 }
 
@@ -115,12 +115,8 @@ img{
     .characters {
         position: absolute;
         font: normal normal 400 18pt/1 "Times New Roman", Times, serif;
-        color:$primary;
+        color:$secondary;
         text-align: center;
-    }
-    .icon {
-        color: #e74c3c;
-        text-shadow: 0 1px 0 #333;
     }
     /* helper classes for quadrant orientation */
     .landscape {
