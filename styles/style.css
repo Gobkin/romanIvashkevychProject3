@@ -238,6 +238,14 @@ button {
   background: #f77754;
   border-radius: 20px;
   font-weight: 700;
+  border: 3px solid #584b42;
+  border-radius: 15px;
+}
+
+button:hover {
+  border: 3px solid #537d91;
+  color: #537d91;
+  background: #a4d1c8;
 }
 
 img {
@@ -332,12 +340,34 @@ img {
 }
 
 .intro .play {
-  margin-top: 300px;
+  padding-top: 300px;
 }
 
 .gameArea {
   background: rgba(164, 209, 200, 0.6);
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.gameArea .scoreBoard {
+  float: right;
+}
+
+.gameArea .pictureContainer {
+  padding-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.gameArea .pictureContainer .picture {
+  width: 25vw;
+  height: 25vh;
+  padding-top: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .gameArea .container {
@@ -348,22 +378,11 @@ img {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0 auto;
+  width: 60%;
 }
 
-.gameArea .scoreBoard {
-  float: right;
-}
-
-.gameArea .picture {
-  width: 25vw;
-  height: 50%;
-  margin-top: 10vh;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.gameArea .field {
-  height: 50vh;
+.gameArea .container .field {
+  min-height: 50vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -376,29 +395,30 @@ img {
           align-items: center;
 }
 
-.gameArea h2 {
+.gameArea .container h2 {
   font-size: 4rem;
   margin: 0;
 }
 
-.gameArea ul {
+.gameArea .container ul {
   width: 100%;
   padding: 0;
 }
 
-.gameArea ul li {
+.gameArea .container ul li {
   width: 100%;
   background: #f77754;
   margin: 5px 0;
-  padding: 10px;
+  padding: 5px;
   font-size: 2.6rem;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
   border: 3px solid #584b42;
   border-radius: 15px;
+  text-align: center;
 }
 
-.gameArea ul li:hover {
+.gameArea .container ul li:hover {
   border: 3px solid #537d91;
   color: #537d91;
   background: #a4d1c8;

@@ -60,6 +60,14 @@ button{
     background:$primary;
     border-radius: 20px;
     font-weight: 700;
+    border: 3px solid $secondary;
+    border-radius: 15px;
+}
+
+button:hover{
+    border: 3px solid $accent1;
+    color:$accent1;
+    background: $accent2;
 }
 
 img{
@@ -145,7 +153,7 @@ img{
     }
 
     .play{
-        margin-top:300px;
+        padding-top:300px;
     }
 }
 
@@ -153,56 +161,66 @@ img{
 
 .gameArea{
     background:rgba(164,209,200,0.6);
-    height:100vh;
-
-    .container{
-        display:flex;
-        justify-content: center;
-        margin:0 auto;
-    }
+    min-height:100vh;
 
     .scoreBoard{
         float:right;
     }
 
-    .picture{
-        width:25vw;
-        height: 50%;
-        margin-top:10vh;
-        // box-shadow: inset 0px 0px 40px 40px rgba(164,209,200,0.6);
-        background-size: contain;
-        background-repeat: no-repeat;
+    .pictureContainer{
+        padding-top:40px;
+        display: flex;
+        justify-content: center;
+        .picture{
+            width:25vw;
+            height: 25vh;
+            padding-top: 30px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
     }
     
-    .field{
-        height: 50vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
 
-    h2{
-        font-size: 4rem;
-        margin:0;
-    }
+    .container{
+        display:flex;
+        justify-content: center;
+        margin:0 auto;
+        width:60%;
 
-    ul{
-        width:100%;
-        padding:0;
-        li{
+        .field{
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        h2{
+            font-size: 4rem;
+            margin:0;
+        }
+    
+        ul{
             width:100%;
-            background: $primary;
-            margin: 5px 0;
-            padding:10px;
-            font-size: 2.6rem;
-            flex-basis: 100%;
-            border: 3px solid $secondary;
-            border-radius: 15px;
-        }
-        li:hover{
-            border: 3px solid $accent1;
-            color:$accent1;
-            background: $accent2;
+            padding:0;
+            li{
+                width:100%;
+                background: $primary;
+                margin: 5px 0;
+                padding:5px;
+                font-size: 2.6rem;
+                flex-basis: 100%;
+                border: 3px solid $secondary;
+                border-radius: 15px;
+                text-align: center;
+            }
+            li:hover{
+                border: 3px solid $accent1;
+                color:$accent1;
+                background: $accent2;
+            }
         }
     }
+
+
+    
 }
