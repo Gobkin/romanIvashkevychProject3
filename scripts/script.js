@@ -1,11 +1,14 @@
 const app = {};
 // variables
+
+// Set up character
 app.character = {
     currentLocation: 0,
     score: 2,
 }
 
-roomsArray = [
+// Gigantic array with all the data required for options and descriptions.
+app.roomsArray = [
     {   
         roomIndex:0,
         image:"images/bedroom.jpg",
@@ -234,7 +237,7 @@ roomsArray = [
     {   
         roomIndex:9,
         image:"images/hospital.jpg",
-        text:`You wake up in a hospital wondering if diffent life choices would result in a different outcome of your life. Over the course of your life you achieved a hipsterity of ${app.character.score}. (whatever that means to you).`,
+        text:"You wake up in a hospital wondering if diffent life choices would result in a different outcome of your life.",
         options: [
             {
                 optionText:"Something went wrong.",
@@ -255,25 +258,29 @@ roomsArray = [
                 scoreChange: 0
             }
         ]
-    }
-    
+    } 
 ];
 
+// This variable tracks characters current location
+app.currentRoom = app.roomsArray[app.character.currentLocation];
 
-app.currentRoom = roomsArray[app.character.currentLocation];
-
+// This funtion matches the users choice and moves character around depending on the users choice.
 app.checkAnswer = function(){
+    // text from the option is saved to a variable
     let userAnswer = $(this).text();
+    // here text is matched with the corresponding object in the array
     let pickedOption = app.currentRoom.options.find( answer => answer.optionText === userAnswer);
+    // the outcome text is displayed and style toggled on the 'next' button.
     $('h2').text(pickedOption.outcomeText);
     $('.next').toggleClass('hidden');
     $('li').off('click');
-    // Increment/decrement score;
+    // score change recorderd, current location is updated.
     app.character.score = app.character.score + pickedOption.scoreChange;
     app.character.currentLocation = pickedOption.roomOutcome;
-    app.currentRoom = roomsArray[app.character.currentLocation];
+    app.currentRoom = app.roomsArray[app.character.currentLocation];
 }
 
+// This function displays new room on to the page.
 app.populate = () =>{
     $('.picture').css('background-image', `url(${app.currentRoom.image})`);
     $('h2').text(app.currentRoom.text);
@@ -291,11 +298,3 @@ $(function(){
     app.populate();
     $('.next').on('click', app.populate);
 });
-
-// Listen to which option the user picks from the list;
-// Match the selected input with the corresponding result;
-// Display the result of user’s choice;
-// Display text, options and picture of the next part based on the previous choice;
-// Repeat till the end;
-// Once the final part is reached display the final result text based on the overall score achieved.
-
