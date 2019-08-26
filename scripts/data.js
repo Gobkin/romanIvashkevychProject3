@@ -131,7 +131,7 @@ roomsArray = [
         options: [
             {
                 optionText:"Pretend not to notice them.",
-                outcomeText:"You turn you sight inwards in attempt to idnore them. While at it you ignore uber driver making turn without checking for pedestrians. You get hit.",
+                outcomeText:"You turn you sight inwards in attempt to ignore them. While at it you ignore uber driver making turn without checking for pedestrians. You get hit.",
                 roomOutcome: 9,
                 scoreChange: 0
             },
@@ -201,28 +201,53 @@ roomsArray = [
     },
     {   
         roomIndex:8,
-        image:"images/walk.jpg",
-        text:"Walking around town with no destination is a pretty nice mediocre task. Until you see a group of rivals aproaching you. Their manbuns are impecable, jeans so skinny there is absolutely no chhance of them having descendant and they spend more on beard care products then you do on rent. What will you do?",
+        image:"images/brew.jpg",
+        text:"How should procede about making beer?",
         options: [
             {
-                optionText:"Pretend not to notice them.",
-                outcomeText:"You turn you sight inwards in attempt to idnore them. While at it you ignore uber driver making turn without checking for pedestrians. You get hit.",
+                optionText:"Mix some sawdust and cream.",
+                outcomeText:"After you taste your concoction you realize that this is not probably how cream ale is made. Last thing you remember is calling 911.",
                 roomOutcome: 9,
                 scoreChange: 0
             },
             {
-                optionText:"Join forces.",
-                outcomeText:"Your beards gravitate towards each other so hard that time and space can not hold such amount of self-absorption. Whole universe collapses.",
+                optionText:"Mix peanut butter and pickle juice.",
+                outcomeText:"You toss your ingridients into a pressure cooker and fire it off. Somehow you manage to set whole place on fire as well.",
                 roomOutcome: 9,
                 scoreChange: 0
             },
             {
-                optionText:"You give up.",
-                outcomeText:"You realize that you will never be able to match them. This realization is so profound that it induces a panic attack.",
+                optionText:"Boil water with some grain and spices.",
+                outcomeText:"As soon as you turn on a stove it exploads. Freak accident.",
                 roomOutcome: 9,
                 scoreChange: 0
             }
         ]
     },
+    {   
+        roomIndex:9,
+        image:"images/hospital.jpg",
+        text:`You wake up in a hospital wondering if diffent life choices would result in a different outcome of your life. Over the course of your life you achieved a hipsterity of ${app.character.score}. (whatever that means to you).`,
+        // options: [
+        //     {
+        //         optionText:"Mix some sawdust and cream.",
+        //         outcomeText:"After you taste your concoction you realize that this is not probably how cream ale is made. Last thing you remember is calling 911.",
+        //         roomOutcome: 9,
+        //         scoreChange: 0
+        //     },
+        //     {
+        //         optionText:"Mix peanut butter and pickle juice.",
+        //         outcomeText:"You toss your ingridients into a pressure cooker and fire it off. Somehow you manage to set whole place on fire as well.",
+        //         roomOutcome: 9,
+        //         scoreChange: 0
+        //     },
+        //     {
+        //         optionText:"Boil water with some grain and spices.",
+        //         outcomeText:"As soon as you turn on a stove it exploads. Freak accident.",
+        //         roomOutcome: 9,
+        //         scoreChange: 0
+        //     }
+        // ]
+    }
     
 ];
